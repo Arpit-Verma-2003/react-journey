@@ -1,32 +1,6 @@
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
+import CoreComponents from "./Components/CoreComponents.jsx";
 import { CORE_CONCEPTS } from "./data";
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function CoreComponents(props) {
-  return (
-    <li>
-      <img src={props.image} alt="hampe naye" />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
-
-function Header() {
-  const keyword = reactDescriptions[genRandomInt(reactDescriptions.length - 1)];
-  return (
-    <header>
-      <img src={CORE_CONCEPTS[0].image} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {keyword} React concepts you will need for almost any app you are going
-        to build!
-      </p>
-    </header>
-  );
-}
+import Header from "./Components/Header.jsx";
 
 function App() {
   return (
