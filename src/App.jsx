@@ -2,6 +2,9 @@ import CoreComponents from "./Components/CoreComponents.jsx";
 import { CORE_CONCEPTS } from "./data";
 import Header from "./Components/Header.jsx";
 import TabButton from "./Components/TabButton.jsx";
+function clickHandler(selectedButton){
+  console.log(selectedButton);
+}
 function App() {
   return (
     <div>
@@ -28,10 +31,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Click it</TabButton>
-            <TabButton>yoyo</TabButton>
-            <TabButton>aji ha</TabButton>
-            <TabButton>launde</TabButton>
+            <TabButton onPress = {()=>clickHandler(1)}>Click it</TabButton>
+            <TabButton onPress = {()=>clickHandler(2)}>yoyo</TabButton>
+            <TabButton onPress = {()=>clickHandler(3)}>aji ha</TabButton>
+            <TabButton onPress = {()=>clickHandler(4)}>launde</TabButton>
           </menu>
         </section>
       </main>

@@ -1,5 +1,8 @@
-export default function TabButton(prop){
+export default function TabButton({children,onPress}){
+    
     return(
-        <li><button>{prop.children}</button></li>
+        <li>
+            <button onClick={onPress}>{children}</button>
+        </li>
     );
 }
