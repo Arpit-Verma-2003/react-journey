@@ -28,28 +28,18 @@ function App() {
         <section id="core-concepts">
           <h2>Time to get started!</h2>
           <ul>
-            <CoreComponents
-              image={CORE_CONCEPTS[0].image}
-              title ={CORE_CONCEPTS[0].title}
-              description ={CORE_CONCEPTS[0].description}
-            />
-            <CoreComponents {...CORE_CONCEPTS[1]}
-            />
-            <CoreComponents
-              {...CORE_CONCEPTS[2]}
-            />
-            <CoreComponents
-              {...CORE_CONCEPTS[3]}
-            />
+            {CORE_CONCEPTS.map((item)=>(
+            <CoreComponents key={item.title} {...item}/>)
+            )}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onPress = {()=>clickHandler('components')}>Click it</TabButton>
-            <TabButton onPress = {()=>clickHandler('jsx')}>yoyo</TabButton>
-            <TabButton onPress = {()=>clickHandler('props')}>aji ha</TabButton>
-            <TabButton onPress = {()=>clickHandler('state')}>launde</TabButton>
+            <TabButton isSelected={selectedTopic==='components'} onPress = {()=>clickHandler('components')}>Click it</TabButton>
+            <TabButton isSelected={selectedTopic==='jsx'} onPress = {()=>clickHandler('jsx')}>yoyo</TabButton>
+            <TabButton isSelected={selectedTopic==='props'} onPress = {()=>clickHandler('props')}>aji ha</TabButton>
+            <TabButton isSelected={selectedTopic==='state'} onPress = {()=>clickHandler('state')}>launde</TabButton>
           </menu>
           {tabContent}
         </section>
