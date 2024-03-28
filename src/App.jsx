@@ -39,8 +39,9 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <Tabs
+            buttonContainer = "menu"
             buttons={
-              <menu>
+              <>
                 <TabButton
                   isSelected={selectedTopic === "components"}
                   onPress={() => clickHandler("components")}
@@ -65,7 +66,7 @@ function App() {
                 >
                   launde
                 </TabButton>
-              </menu>
+              </>
             }
           >
             {tabContent}
